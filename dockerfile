@@ -1,11 +1,9 @@
-# Use Python image
-FROM python:3.10
+FROM python:3.10-slim
 
-# Set working folder
 WORKDIR /app
 
-# Copy file into container
-COPY app.py .
+COPY . .
 
-# Run the file
+RUN pip install pandas numpy matplotlib seaborn scikit-learn
+
 CMD ["python", "app.py"]
